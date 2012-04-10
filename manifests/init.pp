@@ -16,7 +16,7 @@ class oracle {
   file {
     '/opt/standard.rsp':
       ensure  => present,
-      content => template('oracle/standard.rsp'),
+      content => template('oracle/standard.rsp.erb'),
       require => Package['oracledb'],
   }
   exec {
