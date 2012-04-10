@@ -14,6 +14,18 @@ class oracle {
       require => Yumrepo['oracle'],
   }
   file {
+    '/oracle':
+      ensure => directory,
+      owner  => 'oracle',
+      group  => 'oracle',
+      require => [
+        File['/opt/standard.rsp'],
+        User['oracle'],
+        Group['oracle', 'dba'],
+        Package['oracledb'],
+      ],
+  }
+  file {
     '/opt/standard.rsp':
       ensure  => present,
       content => template('oracle/standard.rsp.erb'),
@@ -23,7 +35,7 @@ class oracle {
     '/opt/oracle/database/runInstaller -silent -responseFile /opt/standard.rsp':
       user    => 'oracle',
       require => [
-        File['/opt/standard.rsp'],
+        File['/opt/standard.rsp', '/oracle'],
         User['oracle'],
         Group['oracle', 'dba'],
         Package['oracledb'],
