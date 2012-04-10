@@ -5,7 +5,8 @@ class oracle {
 
   package{
     'oracle10g':
-      ensure => installed,
+      ensure  => installed,
+      require => Yumrepo['oracle'],
   }
 
 }
