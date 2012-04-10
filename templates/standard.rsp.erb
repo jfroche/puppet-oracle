@@ -59,7 +59,7 @@ NEXT_SESSION_RESPONSE=<Value Unspecified>
 #Description: Complete path of the Oracle Home.
 #Example    : ORACLE_HOME = "/product/10.2.0/db_1"
 #------------------------------------------------------------------------------
-ORACLE_HOME=/u01/app/oracle/oracle/product/10.2.0/db_1/
+ORACLE_HOME="/u01/app/oracle/oracle/product/10.2.0/db_1/"
 
 #------------------------------------------------------------------------------
 #Name       : ORACLE_HOME_NAME
@@ -67,7 +67,7 @@ ORACLE_HOME=/u01/app/oracle/oracle/product/10.2.0/db_1/
 #Description: Oracle Home Name. Used in creating folders and services.
 #Example    : ORACLE_HOME_NAME = "OraDbHome1"
 #------------------------------------------------------------------------------
-ORACLE_HOME_NAME=ReplicArsia1
+ORACLE_HOME_NAME="ReplicArsia1"
 
 #------------------------------------------------------------------------------
 #Name       : TOPLEVEL_COMPONENT
@@ -272,7 +272,7 @@ REMOVE_HOMES=false
 #
 #Example    : ORACLE_HOSTNAME =
 #------------------------------------------------------------------------------
-ORACLE_HOSTNAME=<%= scope.lookupvar('::hostname') %>
+ORACLE_HOSTNAME="<%= scope.lookupvar('::hostname') %>"
 
 #------------------------------------------------------------------------------
 #Name       : SHOW_END_OF_INSTALL_MSGS
@@ -494,7 +494,7 @@ n_dbType=1
 #
 # Example    : oracle.assistants.server:s_responseFileName = "/tmp/dbca.rsp"
 #------------------------------------------------------------------------------
-oracle.assistants.server:s_responseFileName=/dev/null
+oracle.assistants.server:s_responseFileName="/dev/null"
 
 
 ###############################################################################
@@ -645,7 +645,7 @@ b_receiveEmailNotification=false
 #
 # Example     : s_dlgEMSMTPServer = "mysmtp.mydomain.com"
 #------------------------------------------------------------------------------
-s_dlgEMSMTPServer=10.0.50.17
+s_dlgEMSMTPServer="10.0.50.17"
 
 #------------------------------------------------------------------------------
 # Name       : s_dlgEMEmailAddress
