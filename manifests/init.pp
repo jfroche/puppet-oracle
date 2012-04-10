@@ -4,7 +4,7 @@ class oracle {
   realize(Yumrepo['oracle'])
 
   package{
-    'oracle10g':
+    'oracledb':
       ensure  => installed,
       require => Yumrepo['oracle'],
   }
