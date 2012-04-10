@@ -32,7 +32,8 @@ class oracle {
       require => Package['oracledb'],
   }
   exec {
-    '/opt/oracle/database/runInstaller -silent -responseFile /opt/standard.rsp':
+    'install_oracle':
+      command => '/opt/oracle/database/runInstaller -silent -responseFile /opt/standard.rsp',
       user    => 'oracle',
       require => [
         File['/opt/standard.rsp', '/oracle'],
@@ -41,6 +42,11 @@ class oracle {
         Package['oracledb'],
       ],
       creates => '/u01/app/oracle/oracle/product/10.2.0/db_1/',
+  }
+  exec {
+    '/oracle/oraInventory/orainstRoot.sh':
+      creates => '/etc/oraInst.loc',
+      require => Exec['install_oracle'],
   }
 
 }
