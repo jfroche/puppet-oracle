@@ -15,9 +15,9 @@ class oracle {
   }
   file {
     '/oracle':
-      ensure => directory,
-      owner  => 'oracle',
-      group  => 'oracle',
+      ensure  => directory,
+      owner   => 'oracle',
+      group   => 'oracle',
       require => [
         File['/opt/standard.rsp'],
         User['oracle'],
