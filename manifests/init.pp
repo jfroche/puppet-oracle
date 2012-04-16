@@ -11,7 +11,7 @@ class oracle {
     'gcc':
       ensure  => installed,
   }
-  opackage {
+  package {
     'glib-devel.i686':
       ensure  => installed,
   }
