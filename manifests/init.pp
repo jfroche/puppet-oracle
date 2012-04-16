@@ -12,6 +12,10 @@ class oracle {
       ensure  => installed,
   }
   package {
+    'glibc-devel.i686':
+      ensure  => installed,
+  }
+  package {
     'glib-devel.i686':
       ensure  => installed,
   }
@@ -51,7 +55,13 @@ class oracle {
         File['/opt/standard.rsp', '/oracle'],
         User['oracle'],
         Group['oracle', 'dba'],
-        Package['oracledb', 'make', 'gcc', 'glib-devel.i686'],
+        Package[
+          'oracledb',
+          'make',
+          'gcc',
+          'glibc-devel.i686',
+          'glib-devel.i686'
+          ],
       ],
       creates => '/u01/app/oracle/oracle/product/10.2.0/db_1/',
   }
