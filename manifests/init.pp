@@ -4,6 +4,10 @@ class oracle {
   realize(Yumrepo['oracle'])
 
   package {
+    'make':
+      ensure  => installed,
+  }
+  package {
     'glibc.i686':
       ensure  => installed,
       require => Class['yum::client']
@@ -39,7 +43,7 @@ class oracle {
         File['/opt/standard.rsp', '/oracle'],
         User['oracle'],
         Group['oracle', 'dba'],
-        Package['oracledb'],
+        Package['oracledb', 'make'],
       ],
       creates => '/u01/app/oracle/oracle/product/10.2.0/db_1/',
   }
