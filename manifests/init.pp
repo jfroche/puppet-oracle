@@ -12,6 +12,19 @@ class oracle {
       ensure  => installed,
   }
   package {
+    'binutils':
+      ensure  => installed,
+      require => Package['binutils-devel.x86_64', 'binutils-devel.i686']
+  }
+  package {
+    'binutils-devel.x86_64':
+      ensure  => installed,
+  }
+  package {
+    'binutils-devel.i686':
+      ensure  => installed,
+  }
+  package {
     'glibc-devel.i686':
       ensure  => installed,
   }
@@ -61,6 +74,7 @@ class oracle {
         Group['oracle', 'dba'],
         Package[
           'oracledb',
+          'binutils',
           'make',
           'gcc',
           'libgcc.i686',
