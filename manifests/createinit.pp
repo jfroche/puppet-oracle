@@ -3,14 +3,14 @@ define oracle::createinit (
   $dbname,
   $oraadmin,
   $oradata,
-  $controlfiles
+  $control_files
 )
 {
 
   file {
     "$oracle_home/dbs/init$dbname.ora":
       ensure   => 'present',
-      template => template('oracle/init.ora')
+      content  => template('oracle/init.ora')
   }
 
 }
