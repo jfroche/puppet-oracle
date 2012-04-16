@@ -16,6 +16,10 @@ class oracle {
       ensure  => installed,
   }
   package {
+    'libgcc.i686':
+      ensure  => installed,
+  }
+  package {
     'glib-devel.i686':
       ensure  => installed,
   }
@@ -59,6 +63,7 @@ class oracle {
           'oracledb',
           'make',
           'gcc',
+          'libgcc.i686',
           'glibc-devel.i686',
           'glib-devel.i686'
           ],
