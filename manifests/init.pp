@@ -25,6 +25,10 @@ class oracle {
       ensure  => installed,
   }
   package {
+    'compat-libstdc++-33.i686':
+      ensure  => installed,
+  }
+  package {
     'compat-libstdc++-33.x86_64':
       ensure  => installed,
   }
@@ -80,6 +84,7 @@ class oracle {
           'oracledb',
           'binutils',
           'compat-libstdc++-33.x86_64',
+          'compat-libstdc++-33.i686',
           'make',
           'gcc',
           'libgcc.i686',
