@@ -13,4 +13,11 @@ define oracle::createinit (
       content  => template('oracle/init.ora')
   }
 
+  file {
+    $oradata:
+      ensure => directory,
+      owner  => 'oracle',
+      group  => 'oracle'
+  }
+
 }

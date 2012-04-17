@@ -1,19 +1,18 @@
-SANARSIA.__db_cache_size=2499805184
-SANARSIA.__java_pool_size=16777216
-SANARSIA.__large_pool_size=16777216
-SANARSIA.__shared_pool_size=603979776
-SANARSIA.__streams_pool_size=0
+<%= dbname %>.__db_cache_size=2499805184
+<%= dbname %>.__java_pool_size=16777216
+<%= dbname %>.__large_pool_size=16777216
+<%= dbname %>.__shared_pool_size=603979776
+<%= dbname %>.__streams_pool_size=0
 *.audit_file_dest='<%= oraadmin %>/<%= dbname %>/adump'
 *.background_dump_dest='<%= oraadmin %>/<%= dbname %>/bdump'
 *.compatible='10.2.0.1.0'
-*.control_files=<%= controlfiles.collect {|c| oradata + '/' + c}.join(", ") %>
-'/u01/oradata/SANARSIA/control01.ctl','/u01/oradata/SANARSIA/control02.ctl','/u01/oradata/SANARSIA/control03.ctl'
+*.control_files=<%= control_files.collect {|c| oradata + '/' + c}.join(", ") %>
 *.core_dump_dest='<%= oraadmin %>/<%= dbname %>/cdump'
 *.db_block_size=8192
 *.db_domain=''
 *.db_file_multiblock_read_count=16
-*.db_name='SANARSIA'
-*.dispatchers='(PROTOCOL=TCP) (SERVICE=SANARSIAXDB)'
+*.db_name='<%= dbname %>'
+*.dispatchers='(PROTOCOL=TCP) (SERVICE=<%= dbname %>XDB)'
 *.job_queue_processes=10
 *.nls_territory='BELGIUM'
 *.open_cursors=300

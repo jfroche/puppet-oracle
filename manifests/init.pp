@@ -100,4 +100,11 @@ class oracle {
       require => Exec['install_oracle'],
   }
 
+  file {
+    '/u01/oracle':
+      ensure => directory,
+      owner  => 'oracle',
+      group  => 'oracle'
+  }
+
 }
