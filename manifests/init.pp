@@ -107,4 +107,11 @@ class oracle {
       group  => 'oracle'
   }
 
+  file {
+    '/u01/oracle/app':
+      ensure => directory,
+      owner  => 'oracle',
+      group  => 'oracle'
+  }
+
 }
