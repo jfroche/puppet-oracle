@@ -7,7 +7,7 @@ define oracle::createdb (
   ){
 
   file {
-    '/oracle/createdb-$name.sql':
+    "/oracle/createdb-$name.sql":
       ensure  => present,
       content => template('oracle/createdb.sql'),
       owner   => 'oracle',

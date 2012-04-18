@@ -1,4 +1,4 @@
-create database test
+create database <%= name %>
 USER SYS IDENTIFIED BY <%= sys_password %>
 USER SYSTEM IDENTIFIED BY <%= system_password %>
 logfile group 1 ('<%= oradata %>/<%= name %>/redo1.log') size 100M,
