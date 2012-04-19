@@ -21,6 +21,11 @@ define oracle::createinit (
       ensure => directory,
       owner  => 'oracle',
       group  => 'oracle';
+    "$oradata/$dbname":
+      ensure  => directory,
+      owner   => 'oracle',
+      group   => 'oracle',
+      require => File[$oradata];
     "$oraadmin/$dbname":
       ensure  => directory,
       owner   => 'oracle',
