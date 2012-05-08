@@ -10,8 +10,7 @@ define oracle::tns (
     "$oracle_home/network/admin/tnsnames.ora":
       ensure  => present,
       owner   => 'oracle',
-      group   => 'oracle',
-      replace => false
+      group   => 'oracle'
   }
 
   file_line {
