@@ -15,6 +15,7 @@ define oracle::tns (
 
   file_line {
     "tns_${name}_line":
+      ensure  => present,
       path    => "$oracle_home/network/admin/tnsnames.ora",
       line    => template('oracle/tnsname'),
       require => File["$oracle_home/network/admin/tnsnames.ora"]
