@@ -1,5 +1,4 @@
 define oracle::createmv (
-  $schema,
   $dblink,
   $grant_to_user,
   $refresh_group_schema,
@@ -8,7 +7,7 @@ define oracle::createmv (
 {
 
   file {
-    "/oracle/mv/mv-${schema}-${name}.sql":
+    "/oracle/mv/mv-${name}.sql":
       ensure  => present,
       content => template('oracle/createfastmv.sql'),
       owner   => 'oracle',
