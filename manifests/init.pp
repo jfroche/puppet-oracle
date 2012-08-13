@@ -124,4 +124,12 @@ class oracle {
       require => Exec['install_oracle']
   }
 
+  file {
+    '/oracle/mv':
+      ensure  => directory,
+      owner   => 'oracle',
+      group   => 'oracle',
+      require => File['/oracle'];
+  }
+
 }

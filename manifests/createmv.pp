@@ -8,11 +8,6 @@ define oracle::createmv (
 {
 
   file {
-    '/oracle/mv':
-      ensure  => directory,
-      owner   => 'oracle',
-      group   => 'oracle',
-      require => File['/oracle'];
     "/oracle/mv/mv-${schema}-${name}.sql":
       ensure  => present,
       content => template('oracle/createfastmv.sql'),
