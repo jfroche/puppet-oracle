@@ -1,4 +1,7 @@
-class oracle {
+class oracle (
+  $oracle_home = hiera('oracle_home')
+)
+  {
 
   realize(User['oracle'], Group['oracle', 'dba'])
   realize(Yumrepo['oracle'])
@@ -117,7 +120,7 @@ class oracle {
   include concat::setup
 
   concat {
-    "${::oracle_home}/network/admin/tnsnames.ora":
+    "$oracle_home/network/admin/tnsnames.ora":
       owner   => 'oracle',
       group   => 'oracle',
       require => Exec['install_oracle']
