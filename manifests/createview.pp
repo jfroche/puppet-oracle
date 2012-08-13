@@ -1,5 +1,5 @@
 define oracle::createview (
-  sql
+  $sql
 )
 {
 
