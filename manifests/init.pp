@@ -142,6 +142,16 @@ class oracle (
       owner   => 'oracle',
       group   => 'oracle',
       require => File['/oracle'];
+    '/oracle/package':
+      ensure  => directory,
+      owner   => 'oracle',
+      group   => 'oracle',
+      require => File['/oracle'];
+    '/oracle/procedure':
+      ensure  => directory,
+      owner   => 'oracle',
+      group   => 'oracle',
+      require => File['/oracle'];
   }
 
 }
