@@ -132,6 +132,11 @@ class oracle (
       owner   => 'oracle',
       group   => 'oracle',
       require => File['/oracle'];
+    '/oracle/view':
+      ensure  => directory,
+      owner   => 'oracle',
+      group   => 'oracle',
+      require => File['/oracle'];
   }
 
 }
