@@ -118,7 +118,6 @@ class oracle {
 
   concat {
     "${::oracle_home}/network/admin/tnsnames.ora":
-      ensure  => present,
       owner   => 'oracle',
       group   => 'oracle',
       require => Exec['install_oracle']
