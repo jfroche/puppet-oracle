@@ -1,8 +1,8 @@
 define oracle::tns (
-  $oracle_home = hiera('oracle_home'),
   $host,
   $port,
-  $service
+  $service,
+  $oracle_home = hiera('oracle_home')
 )
 {
 

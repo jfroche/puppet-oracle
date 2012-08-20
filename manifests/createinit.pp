@@ -1,9 +1,9 @@
 define oracle::createinit (
-  $oracle_home = hiera('oracle_home'),
   $dbname,
   $oraadmin,
   $oradata,
-  $control_files
+  $control_files,
+  $oracle_home = hiera('oracle_home')
 )
 {
 

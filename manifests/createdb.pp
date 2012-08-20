@@ -1,6 +1,6 @@
 define oracle::createdb (
-  $oracle_home = hiera('oracle_home'),
   $oradata,
+  $oracle_home = hiera('oracle_home'),
   $sys_password = hiera('oracle_sys_password'),
   $system_password = hiera('oracle_system_password'),
   $charset = 'AL32UTF8',
