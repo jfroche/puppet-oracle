@@ -117,6 +117,14 @@ class oracle (
       group  => 'oracle'
   }
 
+  file {
+    '/etc/profile.d/oracle_path.sh':
+      ensure  => present,
+      owner   => 'root',
+      group   => 'root'
+      content => 'export PATH=$PATH:/u01/app/oracle/oracle/product/10.2.0/db_1/bin'
+  }
+
   include concat::setup
 
   concat {
