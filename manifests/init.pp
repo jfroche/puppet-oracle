@@ -122,7 +122,7 @@ class oracle (
       ensure  => present,
       owner   => 'root',
       group   => 'root',
-      content => 'export PATH=$PATH:/u01/app/oracle/oracle/product/10.2.0/db_1/bin'
+      content => 'export PATH=$PATH:/u01/app/oracle/oracle/product/10.2.0/db_1/bin:/oracle/bin'
   }
 
   include concat::setup
@@ -135,6 +135,11 @@ class oracle (
   }
 
   file {
+    '/oracle/bin':
+      ensure  => directory,
+      owner   => 'oracle',
+      group   => 'oracle',
+      require => File['/oracle'];
     '/oracle/mv':
       ensure  => directory,
       owner   => 'oracle',
