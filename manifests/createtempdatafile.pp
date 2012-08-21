@@ -1,5 +1,4 @@
 define oracle::createtempdatafile (
-  $tablespace,
   $path,
   $initial_size,
   $auto_extend = 'ON',
