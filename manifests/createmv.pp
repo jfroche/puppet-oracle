@@ -1,6 +1,6 @@
 define oracle::createmv (
   $dblink,
-  $grant_to_user,
+  $grant_to_users,
   $refresh_group_schema,
   $refresh_group_name
 )
