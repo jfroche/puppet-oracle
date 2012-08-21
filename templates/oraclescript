@@ -1,0 +1,11 @@
+#!/bin/sh
+sqlplus -SILENT <%= db_user %>/<%= db_pass %> << END_SQL
+set feedback off
+SET HEAD ON
+SET colsep ';'
+SET PAGESIZE 0
+SET CONCAT ON
+
+<%= sql %>
+
+END_SQL
