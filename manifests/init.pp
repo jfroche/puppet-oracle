@@ -49,8 +49,7 @@ class oracle (
   }
   package {
     'glibc.i686':
-      ensure  => installed,
-      require => Class['yum::client']
+      ensure  => installed
   }
   package{
     'oracledb':
