@@ -7,7 +7,7 @@ define oracle::script
   $db_pass = hiera("oracle_${db_user}_password")
 
   file {
-    '/oracle/bin/$name':
+    "/oracle/bin/$name":
       ensure  => present,
       owner   => oracle,
       group   => oracle,
