@@ -1,5 +1,6 @@
 define oracle::createview (
-  $sql
+  $sql,
+  $grant_to_users = [],
 )
 {
 
