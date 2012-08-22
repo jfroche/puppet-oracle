@@ -10,5 +10,5 @@ character set <%= charset %>
 national character set <%= national_charset %>
 datafile '<%= oradata %>/<%= name %>/system.dbf' size 500M autoextend on next 10M maxsize unlimited extent management local
 sysaux datafile '<%= oradata %>/<%= name %>/sysaux.dbf' size 100M autoextend on next 10M maxsize unlimited
-undo tablespace undotbs1 datafile '<%= oradata %>/<%= name %>/undotbs1.dbf' size 100M
+undo tablespace undotbs1 datafile '<%= oradata %>/<%= name %>/undotbs1.dbf' size 100M autoextend on next 10M maxsize unlimited
 default temporary tablespace temp tempfile '<%= oradata %>/<%= name %>/emp01.dbf' size 100M;
