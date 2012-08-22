@@ -1,5 +1,5 @@
 #!/bin/sh
-sqlplus -SILENT <%= db_user %>/<%= db_pass %> << END_SQL
+sqlplus -SILENT  <%= db_user %>/<%= db_pass %> <% if sysdba %>as sysdba<% end %> << END_SQL
 set feedback off
 SET HEAD ON
 SET colsep ';'
