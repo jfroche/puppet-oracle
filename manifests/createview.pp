@@ -10,7 +10,7 @@ define oracle::createview (
       content => template('oracle/createview.sql'),
       owner   => 'oracle',
       group   => 'oracle',
-      require => File['/oracle']
+      require => File['/oracle/view']
   }
 
 }
