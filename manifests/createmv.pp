@@ -12,7 +12,7 @@ define oracle::createmv (
       content => template('oracle/createfastmv.sql'),
       owner   => 'oracle',
       group   => 'oracle',
-      require => File['/oracle'],
+      require => File['/oracle/mv'],
   }
 
 }
