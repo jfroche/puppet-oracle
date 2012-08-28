@@ -1,6 +1,6 @@
 CREATE TABLE <%= name %>
 (
-<%= fields.each do |field| %>
+<% fields.each do |field| %>
  <%= field %>
 <% end %>
 )
