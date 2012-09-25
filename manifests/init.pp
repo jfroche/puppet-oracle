@@ -90,8 +90,7 @@ class oracle (
           'make',
           'gcc',
           'libgcc.i686',
-          'glibc-devel.i686',
-          'glib-devel.i686'
+          'glibc-devel.i686'
           ],
       ],
       creates => '/u01/app/oracle/oracle/product/10.2.0/db_1/',
