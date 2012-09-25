@@ -43,10 +43,10 @@ class oracle (
     'libgcc.i686':
       ensure  => installed,
   }
-  package {
-    'glib-devel.i686':
-      ensure  => installed,
-  }
+#  package {
+#    'glib-devel.i686':
+#      ensure  => installed,
+#  }
   package {
     'glibc.i686':
       ensure  => installed
