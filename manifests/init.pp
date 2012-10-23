@@ -123,8 +123,6 @@ class oracle (
       content => 'export PATH=$PATH:/u01/app/oracle/oracle/product/10.2.0/db_1/bin:/oracle/bin'
   }
 
-  include concat::setup
-
   concat {
     "$oracle_home/network/admin/tnsnames.ora":
       owner   => 'oracle',
