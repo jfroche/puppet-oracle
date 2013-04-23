@@ -2,7 +2,8 @@ define oracle::script
 (
   $db_user,
   $sql,
-  $sysdba = false
+  $oracle_bin_path,
+  $sysdba = false,
 )
 {
   $db_pass = hiera("oracle_${db_user}_password")
