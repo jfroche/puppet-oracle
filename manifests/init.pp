@@ -1,5 +1,8 @@
 class oracle (
-  $oracle_home = hiera('oracle_home')
+  $oraclesupport_username,
+  $oraclesupport_password,
+  $oracle_home,
+  $oracle_base
 )
   {
 
