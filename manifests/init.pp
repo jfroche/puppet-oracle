@@ -7,7 +7,6 @@ class oracle (
   {
 
   realize(User['oracle'], Group['oracle', 'dba'])
-  realize(Yumrepo['oracle'])
 
   package {
     'make':
@@ -57,7 +56,6 @@ class oracle (
   package{
     'oracledb':
       ensure  => installed,
-      require => Yumrepo['oracle'],
   }
   file {
     '/oracle':
