@@ -75,12 +75,19 @@ class oracle (
       content => template('oracle/standard.rsp.erb'),
       require => Package['oracledb'],
   }
+  file {
+    '/etc/oraInv':
+      ensure => directory,
+      owner  => 'oracle',
+      group  => 'dba'
+  }
+
   exec {
     'install_oracle':
       command => '/opt/oracle/database/runInstaller -silent -responseFile /opt/standard.rsp',
       user    => 'oracle',
       require => [
-        File['/opt/standard.rsp', '/oracle'],
+        File['/opt/standard.rsp', '/oracle', '/etc/oraInv'],
         User['oracle'],
         Group['oracle', 'dba'],
         Package[
