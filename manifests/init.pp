@@ -101,7 +101,7 @@ class oracle (
           'glibc-devel.i686'
           ],
       ],
-      creates => '/u01/app/oracle/oracle/product/10.2.0/db_1/',
+      creates => $oracle_home,
   }
   exec {
     '/oracle/oraInventory/orainstRoot.sh':
@@ -128,11 +128,11 @@ class oracle (
       ensure  => present,
       owner   => 'root',
       group   => 'root',
-      content => 'export PATH=$PATH:/u01/app/oracle/oracle/product/10.2.0/db_1/bin:/oracle/bin'
+      content => "export PATH=\$PATH:${oracle_home}/bin:/oracle/bin"
   }
 
   concat {
-    "$oracle_home/network/admin/tnsnames.ora":
+    "${oracle_home}/network/admin/tnsnames.ora":
       owner   => 'oracle',
       group   => 'oracle',
       require => Exec['install_oracle']
