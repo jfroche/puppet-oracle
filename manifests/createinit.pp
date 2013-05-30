@@ -2,6 +2,7 @@ define oracle::createinit (
   $dbname,
   $oraadmin,
   $oradata,
+  $compatible,
   $control_files,
   $oracle_home = hiera('oracle_home')
 )
@@ -9,8 +10,9 @@ define oracle::createinit (
 
   file {
     "$oracle_home/dbs/init$dbname.ora":
-      ensure   => 'present',
-      content  => template('oracle/init.ora')
+      ensure  => 'present',
+      owner   => 'oracle',
+      content => template('oracle/init.ora')
   }
   file {
     $oradata:

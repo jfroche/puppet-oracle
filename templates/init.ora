@@ -5,7 +5,7 @@
 <%= dbname %>.__streams_pool_size=0
 *.audit_file_dest='<%= oraadmin %>/<%= dbname %>/adump'
 *.background_dump_dest='<%= oraadmin %>/<%= dbname %>/bdump'
-*.compatible='10.2.0.1.0'
+*.compatible='<%= compatible %>'
 *.control_files=<%= control_files.collect {|c| oradata + '/' + c}.join(", ") %>
 *.core_dump_dest='<%= oraadmin %>/<%= dbname %>/cdump'
 *.db_block_size=8192
