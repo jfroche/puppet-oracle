@@ -6,7 +6,7 @@ define oracle::grant (
 {
 
   file {
-    "/oracle/grant/grant-${object}-${name}-${permission}.sql":
+    "/oracle/grant/grant-${object}-${name}.sql":
       ensure  => present,
       content => template('oracle/grant.sql'),
       owner   => 'oracle',
