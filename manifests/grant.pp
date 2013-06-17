@@ -11,7 +11,7 @@ define oracle::grant (
       content => template('oracle/grant.sql'),
       owner   => 'oracle',
       group   => 'oracle',
-      require => File['/oracle/table']
+      require => File['/oracle/grant']
   }
 
 }
