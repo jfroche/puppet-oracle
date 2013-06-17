@@ -1,6 +1,6 @@
 define oracle::grant (
   $object,
-  $permission,
+  $permissions = [],
   $users = [],
 )
 {
