@@ -38,6 +38,10 @@ class oracle (
       ensure  => installed,
   }
   package {
+    'glibc-devel.x86_64':
+      ensure  => installed,
+  }
+  package {
     'glibc-devel.i686':
       ensure  => installed,
   }
@@ -84,7 +88,7 @@ class oracle (
 
   exec {
     'install_oracle':
-      command => '/opt/oracle/database/runInstaller -silent -responseFile /opt/standard.rsp',
+      command => '/opt/oracle/database/runInstaller -silent -responseFile /opt/standard.rsp && /bin/sleep 600',
       user    => 'oracle',
       require => [
         File['/opt/standard.rsp', '/oracle', '/etc/oraInv'],
@@ -98,14 +102,15 @@ class oracle (
           'make',
           'gcc',
           'libgcc.i686',
-          'glibc-devel.i686'
+          'glibc-devel.i686',
+          'glibc-devel.x86_64'
           ],
       ],
       creates => $oracle_home,
   }
   exec {
-    '/oracle/oraInventory/orainstRoot.sh':
-      creates => '/etc/oraInst.loc',
+    '/etc/oraInv/orainstRoot.sh':
+      creates => '/etc/oraInv/oraInst.loc',
       require => Exec['install_oracle'],
   }
 
