@@ -1,12 +1,12 @@
 define oracle::grant (
-  $name,
+  $object,
   $permission,
   $users = [],
 )
 {
 
   file {
-    "/oracle/grant/grant-${name}-${permission}.sql":
+    "/oracle/grant/grant-${object}-${permission}.sql":
       ensure  => present,
       content => template('oracle/grant.sql'),
       owner   => 'oracle',
