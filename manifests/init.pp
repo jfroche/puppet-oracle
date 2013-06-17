@@ -189,6 +189,11 @@ class oracle (
       owner   => 'oracle',
       group   => 'oracle',
       require => File['/oracle'];
+    '/oracle/grant':
+      ensure  => directory,
+      owner   => 'oracle',
+      group   => 'oracle',
+      require => File['/oracle'];
   }
 
 }
