@@ -155,6 +155,11 @@ class oracle (
       owner   => 'oracle',
       group   => 'oracle',
       require => File['/oracle'];
+    '/oracle/mvlog':
+      ensure  => directory,
+      owner   => 'oracle',
+      group   => 'oracle',
+      require => File['/oracle'];
     '/oracle/table':
       ensure  => directory,
       owner   => 'oracle',
@@ -181,6 +186,11 @@ class oracle (
       group   => 'oracle',
       require => File['/oracle'];
     '/oracle/procedure':
+      ensure  => directory,
+      owner   => 'oracle',
+      group   => 'oracle',
+      require => File['/oracle'];
+    '/oracle/grant':
       ensure  => directory,
       owner   => 'oracle',
       group   => 'oracle',
