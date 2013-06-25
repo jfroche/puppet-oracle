@@ -107,6 +107,7 @@ class oracle (
           ],
       ],
       creates => $oracle_home,
+      timeout => 0,
   }
   exec {
     '/etc/oraInv/orainstRoot.sh':
