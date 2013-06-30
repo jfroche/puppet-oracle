@@ -4,6 +4,7 @@ set feedback off
 SET HEAD ON
 SET colsep ';'
 SET PAGESIZE 0
+SET LINESIZE 3270
 SET CONCAT ON
 
 <%= sql %>
