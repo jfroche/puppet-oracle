@@ -1,5 +1,5 @@
 create user <%= name %>
-identified by <%= password %>
+identified by "<%= password %>"
 default tablespace <%= user_tablespace %>;
 GRANT CREATE SESSION to <%= name %>;
 GRANT CREATE DATABASE LINK to <%= name %>;
