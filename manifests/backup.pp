@@ -4,6 +4,7 @@ define oracle::backup
   $schema,
   $directory,
   $oracle_bin_path,
+  $dumpdirectory,
   $dumpfile
 )
 {

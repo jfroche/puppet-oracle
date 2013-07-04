@@ -1,2 +1,2 @@
 #!/bin/bash
-<%= oracle_bin_path %>/expdp "<%= db_user %>/<%= db_pass %> schemas=<%= schema %> directory=<%= directory %> dumpfile=<%= dumpfile %>" && bzip2 dumpfile=<%= dumpfile %>
+<%= oracle_bin_path %>/expdp "<%= db_user %>/<%= db_pass %> schemas=<%= schema %> directory=<%= directory %> dumpfile=<%= dumpfile %>" && bzip2 <%= dumpdirectory %>/<%= dumpfile %>
