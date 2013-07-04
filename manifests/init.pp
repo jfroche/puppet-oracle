@@ -123,10 +123,19 @@ class oracle (
   }
 
   file {
+    '/u01/oracle/backup':
+      ensure  => directory,
+      owner   => 'oracle',
+      group   => 'oracle',
+      require => File['/u01/oracle'];
+  }
+
+  file {
     '/u01/oracle/app':
-      ensure => directory,
-      owner  => 'oracle',
-      group  => 'oracle'
+      ensure  => directory,
+      owner   => 'oracle',
+      group   => 'oracle',
+      require => File['/u01/oracle']
   }
 
   file {
@@ -146,6 +155,11 @@ class oracle (
 
   file {
     '/oracle/bin':
+      ensure  => directory,
+      owner   => 'oracle',
+      group   => 'oracle',
+      require => File['/oracle'];
+    '/oracle/directory':
       ensure  => directory,
       owner   => 'oracle',
       group   => 'oracle',
