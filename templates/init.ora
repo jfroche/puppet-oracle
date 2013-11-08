@@ -25,3 +25,4 @@
 *.undo_retention=2400
 *.undo_tablespace='UNDOTBS1'
 *.user_dump_dest='<%= oraadmin %>/<%= dbname %>/udump'
+*.control_management_pack_access='DIAGNOSTIC+TUNING'
