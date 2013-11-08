@@ -19,8 +19,8 @@
 *.pga_aggregate_target=812646400
 *.processes=150
 *.remote_login_passwordfile='EXCLUSIVE'
-*.sga_max_size=12345728000
-*.sga_target=12345728000
+*.sga_max_size=24691456000
+*.sga_target=24691456000
 *.undo_management='AUTO'
 *.undo_retention=2400
 *.undo_tablespace='UNDOTBS1'
