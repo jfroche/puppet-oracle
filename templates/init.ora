@@ -4,7 +4,6 @@
 <%= dbname %>.__shared_pool_size=603979776
 <%= dbname %>.__streams_pool_size=0
 *.audit_file_dest='<%= oraadmin %>/<%= dbname %>/adump'
-*.background_dump_dest='<%= oraadmin %>/<%= dbname %>/bdump'
 *.compatible='<%= compatible %>'
 *.control_files=<%= control_files.collect {|c| oradata + '/' + c}.join(", ") %>
 *.core_dump_dest='<%= oraadmin %>/<%= dbname %>/cdump'
@@ -24,5 +23,4 @@
 *.undo_management='AUTO'
 *.undo_retention=2400
 *.undo_tablespace='UNDOTBS1'
-*.user_dump_dest='<%= oraadmin %>/<%= dbname %>/udump'
 *.control_management_pack_access='DIAGNOSTIC+TUNING'
