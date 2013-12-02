@@ -4,7 +4,8 @@ define oracle::createmv (
   $refresh_group_schema,
   $refresh_group_name,
   $query = '',
-  $template = 'createfastmv.sql'
+  $template = 'createfastmv.sql',
+  $refresh_method = 'FAST'
 )
 {
 
