@@ -1,8 +1,8 @@
 define oracle::createmv (
   $dblink,
   $grant_to_users,
-  $refresh_group_schema,
-  $refresh_group_name,
+  $refresh_group_schema = '',
+  $refresh_group_name = '',
   $query = '',
   $template = 'createfastmv.sql',
   $refresh_method = 'FAST'

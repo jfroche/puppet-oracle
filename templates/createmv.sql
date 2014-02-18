@@ -2,6 +2,8 @@ create materialized view <%= name %> TABLESPACE USERS STORAGE ( INITIAL 320K NEX
 <% grant_to_users.each do |user| %>
 GRANT SELECT on <%= name %> to <%= user %>;
 <% end %>
+<% if refresh_group_name %>
 exec DBMS_REFRESH.ADD(name => '"<%= refresh_group_schema %>"."<%= refresh_group_name %>"',list => '<%= name.gsub(/(\w+)\.(\w+)/, '"\1"."\2"') %>',lax => TRUE);
+<% end %>
 quit
 
