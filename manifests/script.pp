@@ -4,13 +4,14 @@ define oracle::script
   $sql,
   $oracle_bin_path,
   $sysdba = false,
+  $ensure = present,
 )
 {
   $db_pass = hiera("oracle_${db_user}_password")
 
   file {
     "/oracle/bin/$name":
-      ensure  => present,
+      ensure  => $ensure,
       owner   => oracle,
       group   => oracle,
       mode    => '0755',
