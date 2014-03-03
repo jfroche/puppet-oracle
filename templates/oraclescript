@@ -1,4 +1,5 @@
 #!/bin/bash
+date
 <%= oracle_bin_path %>/sqlplus -SILENT  <%= db_user %>/<%= db_pass %> <% if sysdba %>as sysdba<% end %> << END_SQL
 set feedback off
 SET HEAD ON
@@ -10,3 +11,4 @@ SET CONCAT ON
 <%= sql %>
 
 END_SQL
+date
