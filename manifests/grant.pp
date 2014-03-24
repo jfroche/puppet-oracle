@@ -2,6 +2,7 @@ define oracle::grant (
   $object,
   $permissions = [],
   $users = [],
+  $grant_option = false,
 )
 {
 
