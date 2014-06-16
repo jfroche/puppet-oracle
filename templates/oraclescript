@@ -12,21 +12,21 @@ lock() {
     eval "exec $fd>$lock_file"
 
     # acquier the lock
-    flock -n $fd \
+    flock -n "$fd" \
         && return 0 \
         || return 1
 }
 
 eexit() {
-    local error_str="$@"
+    local error_str="$*"
 
-    echo $error_str
+    echo "$error_str"
     exit 1
 }
 
 sql() {
     date
-    <%= oracle_bin_path %>/sqlplus -SILENT  <%= db_user %>/<%= db_pass %> <% if sysdba %>as sysdba<% end %> << END_SQL
+    <%= oracle_bin_path %>/sqlplus -SILENT  <%= db_user %>/<%= db_pass %> <% if sysdba %>as sysdba<% end %> <<- END_SQL
     set feedback off
     SET HEAD ON
     SET colsep ';'
@@ -36,12 +36,12 @@ sql() {
 
     <%= sql %>
 
-    END_SQL
+	END_SQL
     date
 }
 
 main() {
-    lock $PROGNAME \
+    lock "$PROGNAME" \
         || eexit "Only one instance of $PROGNAME can run at one time."
 
     # do smtg
