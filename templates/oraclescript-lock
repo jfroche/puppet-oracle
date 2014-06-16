@@ -1,0 +1,51 @@
+#!/bin/bash
+readonly PROGNAME=$(basename "$0")
+readonly LOCKFILE_DIR=/tmp
+readonly LOCK_FD=200
+
+lock() {
+    local prefix=$1
+    local fd=${2:-$LOCK_FD}
+    local lock_file=$LOCKFILE_DIR/$prefix.lock
+
+    # create lock file
+    eval "exec $fd>$lock_file"
+
+    # acquier the lock
+    flock -n "$fd" \
+        && return 0 \
+        || return 1
+}
+
+eexit() {
+    local error_str="$*"
+
+    echo "$error_str"
+    exit 1
+}
+
+sql() {
+    date
+    <%= oracle_bin_path %>/sqlplus -SILENT  <%= db_user %>/<%= db_pass %> <% if sysdba %>as sysdba<% end %> <<- END_SQL
+    set feedback off
+    SET HEAD ON
+    SET colsep ';'
+    SET PAGESIZE 0
+    SET LINESIZE 3270
+    SET CONCAT ON
+
+    <%= sql %>
+
+	END_SQL
+    date
+}
+
+main() {
+    lock "$PROGNAME" \
+        || eexit "Only one instance of $PROGNAME can run at one time."
+
+    # do smtg
+    sql
+}
+
+main
